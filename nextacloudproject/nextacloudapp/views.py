@@ -1,23 +1,22 @@
 from django.shortcuts import render
-from .models import Employees , Employers
-from .serializers import EmployeesSeriallizer , EmployerstSeriallizer
+from .models import Items , Brands , Store , Staff
+from .serializers import ItemsSerializer , BrandsSerializer , StoreSerializer, StaffSerializer
 from rest_framework import viewsets
-from django.http import JsonResponse , request
-from django.views import View
-from rest_framework import permissions
-from rest_framework.parsers import MultiPartParser, FormParser
-from rest_framework.response import Response
-from rest_framework import status
-from rest_framework.views import APIView
-from rest_framework.permissions import IsAuthenticated,AllowAny
+
+class ItemsViewSet(viewsets.ModelViewSet):
+    serializer_class = ItemsSerializer
+    queryset = Items.objects.all()
+
+class BrandsViewSet(viewsets.ModelViewSet):
+    serializer_class = BrandsSerializer
+    queryset = Brands.objects.all()
+
+class StoreViewSet(viewsets.ModelViewSet):
+    serializer_class = StoreSerializer
+    queryset = Store.objects.all()
+
+class StaffViewSet(viewsets.ModelViewSet):
+    serializer_class = StaffSerializer
+    queryset = Staff.objects.all()
+
 # Create your views here.
-
-class EmployeesViewSet(viewsets.ModelViewSet):
-    serializer_class = EmployeesSeriallizer
-    queryset = Employees.objects.all()
-
-class EmployersViewSet(viewsets.ModelViewSet):
-    serializer_class = EmployerstSeriallizer
-    queryset = Employers.objects.all()
-
-

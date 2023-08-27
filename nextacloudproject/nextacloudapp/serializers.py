@@ -1,14 +1,22 @@
 from rest_framework import serializers
-from .models import Employees , Employers
+from .models import Items , Brands , Store , Staff
 
-
-class EmployeesSeriallizer(serializers.ModelSerializer):
-    class Meta:
-        model = Employees
+class ItemsSerializer(serializers.ModelSerializer):
+    class Meta: 
+        model = Items
         fields = '__all__'
-    
 
-class EmployerstSeriallizer(serializers.ModelSerializer):
+class BrandsSerializer(serializers.ModelSerializer):
+    class Meta: 
+        model = Brands
+        fields = '__all__'
+
+class StoreSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Employers
+        model = Store
+        fields = '__all__'
+
+class StaffSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Staff
         fields = '__all__'
