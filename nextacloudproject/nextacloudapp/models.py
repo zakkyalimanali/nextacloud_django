@@ -31,7 +31,6 @@ class Staff(models.Model):
 class Items(models.Model):
     item_name = models.CharField(max_length=200 , null=True, blank=True)
     category = models.CharField(max_length=200, null=True, blank=True)
-    # quantity_in_item = models.IntegerField(null=True , blank=True)
     dollar_value = models.IntegerField(null=True, blank=True)
     brand = models.ForeignKey(Brands, on_delete=models.CASCADE, null=True, blank = True)
     store = models.ForeignKey(Store, on_delete=models.CASCADE, null=True, blank = True)
