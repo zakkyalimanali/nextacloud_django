@@ -9,7 +9,7 @@ class Brands(models.Model):
 class Store(models.Model):
     store_address = models.CharField(max_length=200 , null=True, blank=True)
     store_name = models.CharField(max_length=200 , null=True, blank=True)
-    # manager = models.ForeignKey(Staff, on_delete=models.CASCADE, null=True, blank = True)
+    manager = models.ForeignKey('Staff', on_delete=models.CASCADE, null=True, blank = True, related_name='store_manager')
 
 class Staff(models.Model):
     staff_name = models.CharField(max_length=200, null=True, blank=True)
